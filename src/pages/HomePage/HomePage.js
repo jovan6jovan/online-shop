@@ -1,12 +1,12 @@
 import React from 'react';
 
 import "./HomePage.scss";
-import Categories from "../../components/Categories/Categories";
+import HomePageCategories from "../../components/HomePageCategories/HomePageCategories";
 
 const HomePage = () => {
     return (
         <div className="homepage">
-            <Categories />
+            <HomePageCategories />
         </div>
     )
 }

@@ -1,10 +1,11 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
-import "./CategoryItem.scss";
+import "./HomePageCategoryItem.scss";
 
-const CategoryItem = ({ title, imgUrl, size }) => {
+const HomePageCategoryItem = ({ title, imgUrl, size, history, match, routeName }) => {
   return (
-      <div className={`${size} category-item`}>
+      <div className={`${size} category-item`} onClick={() => history.push(`${match.url}${routeName}`)}>
         <div className="background-img" style={{backgroundImage: `url(${imgUrl})`}}></div>
         <div className="category-item-content">
           <h1 className="category-item-title">{title.toUpperCase()}</h1>
@@ -14,4 +15,4 @@ const CategoryItem = ({ title, imgUrl, size }) => {
   );
 };
 
-export default CategoryItem;
+export default withRouter(HomePageCategoryItem);
